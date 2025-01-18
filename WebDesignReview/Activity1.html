@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook</title>
+    <style>
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background-image: url('https://i.pinimg.com/736x/5b/25/4a/5b254a000f826ceabbf109c73aabdc83.jpg');
+        margin: 0;
+    }
+
+    .container {
+        background-color: darkred;
+        border-radius: 15px;
+        padding: 30px 20px;
+        width: 500px;
+        text-align: center;
+        color: white;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    label {
+        display: block;
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 5px;
+        text-align: left;
+        color: white;
+        font-weight: bold;
+    }
+
+    input {
+        display: block;
+        width: 100%;
+        margin-bottom: 15px;
+        padding: 10px;
+        box-sizing: border-box;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    button {
+        padding: 15px;
+        border-radius: 10px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        border: none;
+        color: white;
+        cursor: pointer;
+        background-color: black;
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>WELCOME TO OPPORTUNEX</h2>
+        <img src="https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/ea7e998d-f274-4591-b69c-23782159ee13/7795d875-92d1-4138-a74e-df1d6c1f45a9.png" width="500" height="600">
+
+        <form action="">
+            <label for="Email">
+                Email/Username:
+            </label>
+            <input type="text" id="Email" name="Email" 
+                placeholder="Enter your Email Account" required>
+
+            <label for="Password">
+                Password:
+            </label>
+            <input type="text" id="Password" name="Password" 
+                placeholder="Enter your Password" required>
+
+            <div class="wrap">
+                <button type="submit">
+                    Login
+                </button>
+            </div>
+    </form>
+</body>
+</html>

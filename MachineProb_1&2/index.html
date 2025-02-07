@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://kit.fontawesome.com/3ef3559250.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Georgia', serif;
+            color: #000;
+        }
+        .resume {
+            width: 800px;
+            background-color: white;
+            padding: 30px;
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            color: #000;
+            transition: background-color 0.5s ease, box-shadow 0.3s ease;
+        }
+        .resume:hover {
+            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
+        }
+        .resume_left, .resume_right {
+            padding: 20px;
+        }
+        .resume_left {
+            background: #f1f1f1;
+            padding: 20px;
+            border-radius: 15px;
+        }
+        h2 {
+            border-bottom: 2px solid #444;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            color: #222;
+        }
+        ul {
+            list-style-type: square;
+            padding: 0;
+        }
+        .my_profile img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+        }
+        .resume_right {
+            margin-top: 20px;
+            background-color: transparent;
+        }
+        .my_name {
+            text-align: center;
+            font-size: 26px;
+            font-weight: bold;
+            color: #333;
+        }
+        .role {
+            font-size: 18px;
+            color: gray;
+        }
+        .my_info {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .color-button {
+            position: absolute;
+            top: 5%;
+            right: 5%;
+            background-color: #444;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Arial', sans-serif;
+            transition: background-color 0.3s ease;
+        }
+        .color-button:hover {
+            background-color: #4071ce;
+        }
+    </style>
+</head>
+<body>
+    <button class="color-button" onclick="changeColor()">Change Color</button>
+    <div class="resume" id="resume">
+        <div class="resume_left">
+            <div class="my_profile">
+                <img src="profile.jpg" alt="profile_pic">
+            </div>
+            <div class="my_name">
+                <p>Yvan Rhay Solis</p>
+                <p class="role">Student</p>
+            </div>
+            <div class="my_info">
+                <p>Email: ypaz1205@gmail.com</p>
+                <p>Phone: 09163070246</p>
+            </div>
+            <div class="about_me">
+                <h2>About Me</h2>
+                <p>"I am a motivated and dedicated student with a passion for learning and growth. I enjoy working on creative projects and improving my skills in web development, designing, and photo editing. My goal is to apply my abilities to make a positive impact in everything I do."</p>
+            </div>
+            <div class="my_skills">
+                <h2>Skills</h2>
+                <ul>
+                    <li>Web Development</li>
+                    <li>Web Designing</li>
+                    <li>Photoshop Editing</li>
+                </ul>
+            </div>
+        </div>
+        <div class="resume_right">
+            <div class="r_education">
+                <h2>Education</h2>
+                <ul>
+                    <li>2023-2024 - FEU Institute of Technology</li>
+                    <li>2024-2025 - FEU Institute of Technology</li>
+                </ul>
+            </div>
+            <div class="r_titles">
+                <h2>Achievements</h2>
+                <ul>
+                    <li>2022-2023 - Technological Institute of the Philippines (With Honor)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        const colors = ['#00FF00', '#FF0000', '#FF00FF'];
+        let currentColorIndex = 0;
+
+        function changeColor() {
+            const resume = document.getElementById('resume');
+            currentColorIndex = (currentColorIndex + 1) % colors.length;
+            resume.style.backgroundColor = colors[currentColorIndex];
+        }
+    </script>
+</body>
+</html>

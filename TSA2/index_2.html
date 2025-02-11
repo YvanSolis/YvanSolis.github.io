@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7 Days - TSA2</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            width: 90%;
+            height: 100vh;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .days {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .square_container {
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+            height: 700px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .square_color {
+            width: 600px;
+            height: 600px;
+            border: 50px solid black;
+            background: transparent;
+            position: absolute;
+            transition: top 0.5s ease-in-out;
+        }
+
+        button {
+            padding: 10px;
+            margin: 5px;
+            font-size: 40px;
+            text-align: center;
+            border: 10px solid rgb(0, 0, 0);
+
+        }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="days">
+            <button onclick="squarecolor('Monday')">MONDAY</button>
+            <button onclick="squarecolor('Tuesday')">TUESDAY</button>
+            <button onclick="squarecolor('Wednesday')">WEDNESDAY</button>
+            <button onclick="squarecolor('Thursday')">THURSDAY</button>
+            <button onclick="squarecolor('Friday')">FRIDAY</button>
+            <button onclick="squarecolor('Saturday')">SATURDAY</button>
+            <button onclick="squarecolor('Sunday')">SUNDAY</button>
+        </div>
+
+        <div class="square_container" id="squarecontainer"></div>
+    </div>
+
+    <script>
+        function squarecolor(day) {
+            let colors = {
+                "Monday": "violet",
+                "Tuesday": "pink",
+                "Wednesday": "blue",
+                "Thursday": "green",
+                "Friday": "yellow",
+                "Saturday": "orange",
+                "Sunday": "red"
+            };
+
+            let square = document.createElement("div");
+            square.className = "square_color";
+            square.style.borderColor = colors[day];
+            square.style.top = "-600px";
+            
+            let container = document.getElementById("squarecontainer");
+            container.innerHTML = "";
+            container.appendChild(square);
+            
+            setTimeout(() => {
+                square.style.top = "50%";
+                square.style.transform = "translateY(-50%)";
+            }, 10);
+        }
+    </script>
+</body>
+</html>

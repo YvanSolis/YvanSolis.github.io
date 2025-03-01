@@ -48,32 +48,31 @@
     <div class="calcu_container">
         <input type="text" class="calcu_screen_container" id="calcu_screen_container" disabled>
         <div class="calcu_num_buttons">
-            <button onclick="clearDisplay()">C</button>
-            <button onclick="backspace()">&lt;</button>
-            <button onclick="appendToDisplay('/')">/</button>
-            <button onclick="appendToDisplay('*')">x</button>
-            <button onclick="appendToDisplay('7')">7</button>
-            <button onclick="appendToDisplay('8')">8</button>
-            <button onclick="appendToDisplay('9')">9</button>
-            <button onclick="appendToDisplay('-')">-</button>
-            <button onclick="appendToDisplay('4')">4</button>
-            <button onclick="appendToDisplay('5')">5</button>
-            <button onclick="appendToDisplay('6')">6</button>
-            <button onclick="appendToDisplay('+')">+</button>
-            <button onclick="appendToDisplay('1')">1</button>
-            <button onclick="appendToDisplay('2')">2</button>
-            <button onclick="appendToDisplay('3')">3</button>
-            <button onclick="calculateResult()">=</button>
-            <button onclick="appendToDisplay('0')" style="grid-column: span 2;">0</button>
-            <button onclick="appendToDisplay('.')">.</button>
-            
+            <button onclick="clear()">C</button>
+            <button onclick="erase()">&lt;</button>
+            <button onclick="append('/')">/</button>
+            <button onclick="append('*')">x</button>
+            <button onclick="append('7')">7</button>
+            <button onclick="append('8')">8</button>
+            <button onclick="append('9')">9</button>
+            <button onclick="append('-')">-</button>
+            <button onclick="append('4')">4</button>
+            <button onclick="append('5')">5</button>
+            <button onclick="append('6')">6</button>
+            <button onclick="append('+')">+</button>
+            <button onclick="append('1')">1</button>
+            <button onclick="append('2')">2</button>
+            <button onclick="append('3')">3</button>
+            <button onclick="results()">=</button>
+            <button onclick="append('0')" style="grid-column: span 2;">0</button>
+            <button onclick="append('.')">.</button>
         </div>
     </div>
     <script>
-        function appendToDisplay(value) { calcu_screen_container.value += value; }
-        function clearDisplay() { calcu_screen_container.value = ''; }
-        function backspace() { calcu_screen_container.value = calcu_screen_container.value.slice(0, -1); }
-        function calculateResult() { 
+        function append(value) { calcu_screen_container.value += value; }
+        function clear() { calcu_screen_container.value = ''; }
+        function erase() { calcu_screen_container.value = calcu_screen_container.value.slice(0, -1); }
+        function results() { 
         try {
             calcu_screen_container.value = eval(calcu_screen_container.value) || ''; 
         } catch {

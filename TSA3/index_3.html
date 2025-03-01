@@ -48,7 +48,7 @@
     <div class="calcu_container">
         <input type="text" class="calcu_screen_container" id="calcu_screen_container" disabled>
         <div class="calcu_num_buttons">
-            <button onclick="clear()">C</button>
+            <button onclick="clearDisplay()">C</button>
             <button onclick="erase()">&lt;</button>
             <button onclick="append('/')">/</button>
             <button onclick="append('*')">x</button>
@@ -70,7 +70,7 @@
     </div>
     <script>
         function append(value) { calcu_screen_container.value += value; }
-        function clear() { calcu_screen_container.value = ''; }
+        function clearDisplay() { calcu_screen_container.value = ''; }
         function erase() { calcu_screen_container.value = calcu_screen_container.value.slice(0, -1); }
         function results() { 
         try {

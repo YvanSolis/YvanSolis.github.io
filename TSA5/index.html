@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Strawhat Pirates</title>
+</head>
+<body>
+    <div class="main-title">
+        <h1>STRAWHATS PIRATES</h1>
+        <p>Yvan Solis | TW26</p>
+    </div>
+    <div class="card-group">
+        <div class="card">
+            <img src ="luffy_img.jpg">
+            <div class="layer"></div>
+            <div class="info">
+                <h1>Monkey D. Luffy</h1>
+                <p>
+                    Luffy was born 19 years ago in Foosha Village to Monkey D. Dragon and an unknown woman. Dragon left Luffy in the care of his grandfather, Monkey D. Garp, who did many dangerous things to Luffy to make him stronger, like throwing him down a deep ravine, leaving him alone in the wild, and tying him to a balloon.
+                </p>
+                <button>More Info</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src ="zoro_img.jpg">
+            <div class="layer"></div>
+            <div class="info">
+                <h1>Roronoa Zoro</h1>
+                <p>
+                    Zoro was born 21 years ago in the East Blue to Tera and Roronoa Arashi, a descendant of the Shimotsuki Family. His father had already been killed in a battle against pirates threatening Shimotsuki Village, and his mother had died of illness, leaving Zoro orphaned. At the village's dojo, he trained to be a swordsman.
+                </p>
+                <button>More Info</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src ="sanji_img.jpg">
+            <div class="layer"></div>
+            <div class="info">
+                <h1>Vinsmoke Sanji</h1>
+                <p>
+                    Sanji was born 21 years ago in the North Blue into the Vinsmoke Family, the reigning royal family of the Germa Kingdom, along with his three brothers on the same day, with Sanji being the third son of the family and the fourth child overall, thereby making him the kingdom's third prince.
+                </p>
+                <button>More Info</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src ="choppper_img.jpg">
+            <div class="layer"></div>
+            <div class="info">
+                <h1>Tony Tony Chopper</h1>
+                <p>
+                    Tony Tony Chopper, also known as "Cotton Candy Lover" Chopper, is the doctor of the Straw Hat Pirates and one of the Senior Officers of the Straw Hat Grand Fleet. He is the sixth member of the crew and the fifth to join, doing so at the end of the Drum Island Arc. He was temporarily forced to join the Foxy Pirates during the Long Ring Long Land Arc but was quickly returned to Luffy's crew.
+                </p>
+                <button>More Info</button>
+            </div>
+        </div>
+    </div>
+    <div class="popup-container" id="popup">
+        <div class="popup-content">
+            <div class="popup-image">
+                <img id="popupImg" src="" alt="">
+            </div>
+            <div class="popup-text">
+                <h1 id="popupTitle"></h1>
+                <p id="popupDesc"></p>
+                <button class="back-btn" id="closePopup">Back to Main Menu</button>
+            </div>            
+    </div>
+    <script>
+        document.querySelectorAll('.info button').forEach(button => {
+        button.addEventListener('click', function() {
+        let card = this.closest('.card');
+        let name = card.querySelector('h1').textContent;
+        let info = card.querySelector('p').textContent;
+        let imgSrc = card.querySelector('img').src;
+        
+        document.getElementById('popupTitle').textContent = name;
+        document.getElementById('popupDesc').textContent = info;
+        document.getElementById('popupImg').src = imgSrc;
+
+        document.getElementById('popup').style.display = 'flex';
+        });
+    }); 
+
+        document.querySelectorAll('.info p').forEach(desc => {
+        desc.style.display = 'none';
+    });
+
+        document.getElementById('closePopup').addEventListener('click', function() {
+        document.getElementById('popup').style.display = 'none';
+    });
+    </script>
+</body>
+</html>
